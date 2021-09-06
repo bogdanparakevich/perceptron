@@ -1,8 +1,6 @@
 FROM python:3.9
 
-RUN pip install numpy
-
-RUN pip install time
+RUN pip install -r requirements.txt
 
 COPY . .
 

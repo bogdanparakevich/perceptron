@@ -1,0 +1,3 @@
+RUN pip install numpy
+
+RUN pip install time

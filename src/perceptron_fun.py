@@ -3,7 +3,7 @@ import time
 
 def perceptron(x, y_true):
 # input train data: x, y_true
-# this function find weights w0, w1 by method gradient descent whih nesterov momentum 
+# this function find weights w0, w1 by method gradient descent with nesterov momentum 
 # output: w0, w1, loss function, time
 
     def model(x, w0, w1):

@@ -1,4 +1,4 @@
-from src.gradient_descent_with_nesterov import *
+from src.perceptron_fun import *
 
 
 perceptron(x = np.array([79.9, 90.6, 83.8, 80.9, 81.1, 88.7, 87.5, 88.7, 86. , 84.7, 85.1,

@@ -2,6 +2,9 @@ import numpy as np
 import time
 
 def perceptron(x, y_true):
+# input train data: x, y_true
+# this function find weights w0, w1 by method gradient dascent whit nesterov momentum 
+# output: w0, w1, loss function, time
 
     def model(x, w0, w1):
         y_pred = w0 + w1 * x
@@ -30,10 +33,10 @@ def perceptron(x, y_true):
         return momentum * change
 
     for i in range(100000):
-        w0_pr = -(1 / n) * 2 * np.sum(y_true - model(x, w0, w1))
-        w1_pr = (1 / n) * 2 * np.sum((y_true - model(x, w0, w1)) * (-x))
-        change_new_w0 = nesterov(momentum, change_0) - (alfa * w0_pr)
-        change_new_w1 = nesterov(momentum, change_1) - (alfa * w1_pr)
+        w0_der = -(1 / n) * 2 * np.sum(y_true - model(x, w0, w1))
+        w1_der = (1 / n) * 2 * np.sum((y_true - model(x, w0, w1)) * (-x))
+        change_new_w0 = nesterov(momentum, change_0) - (alfa * w0_der)
+        change_new_w1 = nesterov(momentum, change_1) - (alfa * w1_der)
         w0_new = w0 + change_new_w0
         w1_new = w1 + change_new_w1
         loss = loss_fun(n, y_true, model)
